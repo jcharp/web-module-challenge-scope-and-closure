@@ -42,6 +42,9 @@ Find the file `index.js` and complete the tasks.
 Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
+
+  when a function can't find a variable being referrenced, it looks to its outer scopes for the variable
+
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -63,8 +66,16 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
+
+  it is inside the return function.  it is looking for the name passed to it from its outer function
+
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+
+  "Dan rolled a " will always be the same.  the mumber can change
+
 c. What is the lexical scope of `newRoll`? 
+
+  the personalDice(name) function
 
 ### Task 3 - Stretch Goals
 
