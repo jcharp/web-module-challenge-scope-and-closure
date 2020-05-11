@@ -91,13 +91,13 @@ function finalScore(inning, numOfInning){
   let away = 0;
 
   for ( i = 0; i < numOfInning; i++) {
-    home = home + inning;
+    home = home + inning();
     
         
   }
 
   for ( i = 0; i < numOfInning; i++) {
-    away = away + inning;
+    away = away + inning();
         
   }
 
@@ -109,6 +109,8 @@ function finalScore(inning, numOfInning){
 
   
   };
+
+  console.log(finalScore(inning, 9));
   /*Code Here*/
 
 
