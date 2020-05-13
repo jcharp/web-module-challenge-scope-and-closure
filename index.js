@@ -27,10 +27,16 @@ function processFirstItem(stringList, callback) {
  * Study the code for counter1 and counter2. Answer the questions below.
  * 
  * 1. What is the difference between counter1 and counter2?
+ *  
+ *    counter1 declares count inside the function and counter2 declares it globally outside the function
  * 
  * 2. Which of the two uses a closure? How can you tell?
- * 
+ *      
+ *    counter2 because it is accessing values from outside of its scope
+ *    
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
+ * 
+ *     counter1 is preferred if you are keeping a running count of something.  counter2 if you are not interested in keeping running count
  *
 */
 
@@ -56,11 +62,15 @@ function counter2() {
 
 Write a function called `inning` that generates a random number of points that a team scored in an inning. This should be a whole number between 0 and 2. */
 
-function inning(/*Code Here*/){
+function inning(){
 
     /*Code Here*/
 
+    return Math.floor(Math.random() * 3)
+
+
 }
+console.log(inning());
 
 /* Task 3: finalScore()
 
@@ -76,11 +86,34 @@ finalScore(inning, 9) might return:
 
 */ 
 
-function finalScore(/*code Here*/){
+function finalScore(inning, numOfInning){
+  let home = 0;
+  let away = 0;
 
+  for ( i = 0; i < numOfInning; i++) {
+    home = home + inning();
+    
+        
+  }
+
+  for ( i = 0; i < numOfInning; i++) {
+    away = away + inning();
+        
+  }
+
+  return {
+    "home" : home,
+    "away" : away
+  
+  }
+
+  
+  };
+
+  console.log(finalScore(inning, 9));
   /*Code Here*/
 
-}
+
 
 /* Task 4: 
 
@@ -103,8 +136,37 @@ and returns the score at each pont in the game, like so:
 
 Final Score: 6 - 10 */
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
-}
+function scoreboard(inning, numI) {
+   /* CODE HERE */
+  let home = [];
+  let away = [];
+  let homeT = 0;
+  let awayT = 0;
+
+  for (i = 0; i < numI; i++) {
+    home[i] = inning();
+    
+  }
+  for (i = 0; i < numI; i++){
+    away[i] = inning();
+   
+  }
+  return {
+    "1st inning" :`${home[0]} - ${away[0]}`, 
+    "2nd inning" :`${home[1]} - ${away[1]}`,  
+    "3rd inning" : `${home[2]} - ${away[2]}`, 
+    "4th inning" :`${home[3]} - ${away[3]}`, 
+    "5th inning" : `${home[4]} - ${away[4]}`,   
+    "6th inning" : `${home[5]} - ${away[5]}`,  
+    "7th inning" : `${home[6]} - ${away[6]}`, 
+    "8th inning" : `${home[7]} - ${away[7]}`,  
+    "9th inning" : `${home[8]} - ${away[8]}`, 
+    "Final Score" : `${homeT} - ${awayT}`, 
+
+  }
+};
+
+console.log(scoreboard(inning, 9));
 
 
+// no change. this is for pull request
